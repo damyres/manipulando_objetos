@@ -9,6 +9,7 @@ form.addEventListener("submit", function (evento) {
     evento.preventDefault()
     salvarItem()
     mostrarItens()
+    itensInput.focus()
 })
 
 function salvarItem() {
@@ -23,8 +24,7 @@ function salvarItem() {
             checar: false
         })
     }
-
-    console.log(listaDeItens)
+    itensInput.value = ''
 }
 function mostrarItens() {
     ulItens.innerHTML = ''
