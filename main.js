@@ -64,8 +64,15 @@ function mostrarItens() {
             const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value')
             listaDeItens[valorDoElemento].checar = evento.target.checked
             mostrarItens()
-
         })
+    })
+    const deletarObjetos = document.querySelectorAll(".deletar")
 
+    deletarObjetos.forEach(i => {
+        i.addEventListener('click', (evento) => {
+            valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value')
+            listaDeItens.splice(valorDoElemento, 1)
+            mostrarItens()
+        })
     })
 }
