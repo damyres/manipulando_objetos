@@ -21,7 +21,7 @@ function salvarItem() {
         })
     }
     mostrarItens()
-    
+
     console.log(listaDeItens)
 }
 function mostrarItens() {
@@ -37,5 +37,13 @@ function mostrarItens() {
                     <i class="fa-solid fa-trash is-clickable deletar"></i>
                 </div>
         </li>`
+    })
+    const inputCheck = document.querySelectorAll('input[type="checkbox"]')
+
+    inputCheck.forEach(i => {
+        i.addEventListener('click', (evento) => {
+            console.log("Fui clicado")
+        })
+
     })
 }
