@@ -53,7 +53,7 @@ function mostrarItens() {
                 <input type="text" class="is-size-5" value="${elemento.valor}"></input>
             </div>
                 <div>
-                    <i class="fa-regular fa-floppy-disk is-clickable"></i><i class="fa-regular is-clickable fa-pen-to-square editar"></i>
+                    <button onclick"salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></butto> <i class="fa-regular is-clickable fa-pen-to-square editar"></i>
                     <i class="fa-solid fa-trash is-clickable deletar"></i>
                 </div>
         </li>`
@@ -82,7 +82,11 @@ function mostrarItens() {
         i.addEventListener('click', (evento) => {
             itemEditar = evento.target.parentElement.parentElement.getAttribute('data-value')
             mostrarItens()
-            console.log(itemEditar)
         })
     })
+}
+
+function salvarEdicao(){
+    const itemEditado = document.querySelector(`[data-value"${itemEditar}] input[type=text"]`)
+    console.log(itemEditado.value)
 }
